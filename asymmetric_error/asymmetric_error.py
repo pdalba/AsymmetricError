@@ -5,59 +5,59 @@ def asymmetric_error(distribution, sigfig=2, center='mean',
                      spread='stddev', ci=None, printOut=True,
                      LaTeX=False):
     """
-    Summarize a distribution of values considering the significant
-    figures its spread. If the distribution is asymmetric such that 
-    the upper and lower spread have different significant figures,
-    the value will only be reported to the amount of digits 
-    consistent with the less precise spread. 
+        Summarize a distribution of values considering the significant
+        figures its spread. If the distribution is asymmetric such that 
+        the upper and lower spread have different significant figures,
+        the value will only be reported to the amount of digits 
+        consistent with the less precise spread. 
 
-    Inputs
-    ------
+        Inputs
+        ------
     
-        distribution: array-like
-            List or array containing the discrete values that comprise
-            the distriubtion.
+            distribution: array-like
+                List or array containing the discrete values that comprise
+                the distriubtion.
 
-        sigfig: int
-            Number of significant figures to report in the final value
-            and spread. Must be >= 1. Default=2. 
+            sigfig: int
+                Number of significant figures to report in the final value
+                and spread. Must be >= 1. Default=2. 
 
-        center: str
-            Measure of the center of the distribution. Must be one of
-            ['mean', 'median']. Default='mean'.
+            center: str
+                Measure of the center of the distribution. Must be one of
+                ['mean', 'median']. Default='mean'.
 
-        spread: str
-            Measure of the spread of the distribution. Must be one of
-            ['stddev', 'CI'], representing the standard deviation and
-            confidence interval. If 'CI' is passed, then the ci argument
-            must also be given. Default='stddev'
+            spread: str
+                Measure of the spread of the distribution. Must be one of
+                ['stddev', 'CI'], representing the standard deviation and
+                confidence interval. If 'CI' is passed, then the ci argument
+                must also be given. Default='stddev'
 
-        ci: tuple-like
-            Tuple or list containin the lower and upper confidence
-            intervals to report in percent. Must be passed if the
-            spread argument is 'CI'. Intervals must be in the range
-            [0, 100].
+            ci: tuple-like
+                Tuple or list containin the lower and upper confidence
+                intervals to report in percent. Must be passed if the
+                spread argument is 'CI'. Intervals must be in the range
+                [0, 100].
 
-        printOut: bool 
-            Flag to print the final value and spread to the command line
-            instead of returning them. Default=True.
+            printOut: bool 
+                Flag to print the final value and spread to the command line
+                instead of returning them. Default=True.
 
-        LaTeX: bool
-            Flag to print the final value and spread with LaTeX formatting.
-            Ignored unless the printOut argument is True. Default=False.
+            LaTeX: bool
+                Flag to print the final value and spread with LaTeX formatting.
+                Ignored unless the printOut argument is True. Default=False.
 
-    Outputs
-    -------
+        Outputs
+        -------
 
-        val, spread, [spread2]
+            val, spread, [spread2]
 
-        val: float
-            The center value of the distribution. Only returned if the
-            printOut argument is False.
+            val: float
+                The center value of the distribution. Only returned if the
+                printOut argument is False.
 
-        spread, [spread2]: float
-            The values describing the spread of the distribution. Only
-            returned if the printOut argument is False.
+            spread, [spread2]: float
+                The values describing the spread of the distribution. Only
+                returned if the printOut argument is False.
     """
 
     # Evaluate the args
@@ -107,7 +107,7 @@ def asymmetric_error(distribution, sigfig=2, center='mean',
 def eval_args(distribution, sigfig, center, spread, ci,
               printOut, LaTeX):
     """
-    Check for consistency and errors among the arguments
+        Check for consistency and errors among the arguments
     """
     try:
         distribution = np.array(distribution)
